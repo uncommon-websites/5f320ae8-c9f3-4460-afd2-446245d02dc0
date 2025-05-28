@@ -35,112 +35,187 @@ Please update features according to the company's product offering. Do not remov
 
 	// Props
 	const {
-		title = "Simple, transparent pricing",
-		subtitle = "Choose the plan that works best for your needs",
-		tierNames = ["Starter", "Pro", "Enterprise"],
+		title = "Creative AI, built for creative control",
+		subtitle = "Plans for every kind of creative",
+		tierNames = ["Free", "Pro", "Agency", "Enterprise"],
 		features = [
 			{
 				name: "Projects",
 				tiers: {
-					Starter: "5",
+					Free: "3",
 					Pro: "Unlimited",
+					Agency: "Unlimited",
 					Enterprise: "Unlimited"
 				}
 			},
 			{
-				name: "Team members",
+				name: "AI credits/month",
 				tiers: {
-					Starter: "1",
-					Pro: "10",
-					Enterprise: "Unlimited"
+					Free: "20",
+					Pro: "200",
+					Agency: "2,500",
+					Enterprise: "Custom"
 				}
 			},
 			{
-				name: "Storage",
+				name: "Seats",
 				tiers: {
-					Starter: "1GB",
-					Pro: "10GB",
-					Enterprise: "Unlimited"
+					Free: "1",
+					Pro: "1",
+					Agency: "10",
+					Enterprise: "Flexible"
 				}
 			},
 			{
-				name: "API access",
+				name: "Team workspaces",
 				tiers: {
-					Starter: false,
-					Pro: true,
+					Free: false,
+					Pro: false,
+					Agency: true,
 					Enterprise: true
 				}
 			},
 			{
-				name: "Custom domains",
+				name: "Shared assets/libraries",
 				tiers: {
-					Starter: false,
-					Pro: true,
+					Free: false,
+					Pro: false,
+					Agency: true,
 					Enterprise: true
 				}
 			},
 			{
-				name: "Analytics",
+				name: "Creative AI models (text, image, video)",
 				tiers: {
-					Starter: "Basic",
-					Pro: "Advanced",
+					Free: true,
+					Pro: true,
+					Agency: true,
+					Enterprise: true
+				}
+			},
+			{
+				name: "Export options (image, video, layers)",
+				tiers: {
+					Free: false,
+					Pro: true,
+					Agency: true,
+					Enterprise: true
+				}
+			},
+			{
+				name: "Custom styles",
+				tiers: {
+					Free: false,
+					Pro: "1 active",
+					Agency: "Multiple",
+					Enterprise: "2+ libraries"
+				}
+			},
+			{
+				name: "Priority/support SLA",
+				tiers: {
+					Free: "Email, standard",
+					Pro: "Priority email",
+					Agency: "White-glove onboarding + support",
+					Enterprise: "Dedicated SLA & private Slack"
+				}
+			},
+			{
+				name: "Workspace management",
+				tiers: {
+					Free: false,
+					Pro: false,
+					Agency: true,
 					Enterprise: "Advanced"
 				}
 			},
 			{
-				name: "Support response time",
+				name: "Onboarding + training",
 				tiers: {
-					Starter: "24 hours",
-					Pro: "4 hours",
-					Enterprise: "1 hour"
+					Free: false,
+					Pro: false,
+					Agency: "White-glove onboarding",
+					Enterprise: "Custom onboarding, training, playbooks"
 				}
 			},
 			{
-				name: "Dedicated account manager",
+				name: "Integrations/API access",
 				tiers: {
-					Starter: false,
+					Free: false,
 					Pro: false,
+					Agency: false,
 					Enterprise: true
 				}
 			},
 			{
-				name: "SLA",
+				name: "SSO/SAML support",
 				tiers: {
-					Starter: false,
+					Free: false,
 					Pro: false,
-					Enterprise: "99.9%"
+					Agency: false,
+					Enterprise: true
+				}
+			},
+			{
+				name: "Private Slack channel",
+				tiers: {
+					Free: false,
+					Pro: false,
+					Agency: false,
+					Enterprise: true
+				}
+			},
+			{
+				name: "Custom workflows",
+				tiers: {
+					Free: false,
+					Pro: false,
+					Agency: false,
+					Enterprise: true
+				}
+			},
+			{
+				name: "Billing management dashboard",
+				tiers: {
+					Free: false,
+					Pro: false,
+					Agency: true,
+					Enterprise: true
 				}
 			}
 		],
 		tiers = [
 			{
-				name: "Starter",
-				monthlyPrice: 9.99,
-				yearlyPrice: 7.99, // 20% savings
-				description: "Perfect for individuals and small projects",
+				name: "Free",
+				monthlyPrice: 0,
+				yearlyPrice: 0,
+				description: "For individuals exploring what FLORA can do. Get access to the core creative tools with limited AI credits—enough to experience the power of the canvas.",
 				features: [
-					"Up to 5 projects",
-					"Basic analytics",
-					"24-hour support response time",
-					"1GB storage"
+					"1 seat",
+					"20 AI credits per month",
+					"Up to 3 projects",
+					"Access to standard AI models (text, image, video)",
+					"Core canvas tools and workflows"
 				],
 				cta: {
 					label: "Get started",
-					href: "/signup?plan=starter"
+					href: "/signup?plan=free"
 				}
 			},
 			{
 				name: "Pro",
-				monthlyPrice: 29.99,
-				yearlyPrice: 23.99, // 20% savings
-				description: "For growing teams and businesses",
+				monthlyPrice: 39,
+				yearlyPrice: 29, // 25% savings
+				description: "For freelancers and individual creatives who want more power, bigger projects, and faster results—all with direct canvas export and personal workspaces.",
 				features: [
-					"Unlimited projects",
-					"Advanced analytics",
-					"4-hour support response time",
-					"10GB storage",
-					"Custom domains",
-					"Team collaboration tools"
+					"1 seat",
+					"200 AI credits per month",
+					"Unlimited personal projects",
+					"Faster AI responses (priority processing)",
+					"Export options (image, video, layered files)",
+					"Custom style training (1 active at a time)",
+					"Personal workspace with version history",
+					"Email support with fast turnaround"
 				],
 				cta: {
 					label: "Get started",
@@ -149,22 +224,47 @@ Please update features according to the company's product offering. Do not remov
 				highlight: true
 			},
 			{
-				name: "Enterprise",
-				monthlyPrice: null,
-				yearlyPrice: null,
-				description: "For large organizations with specific needs",
+				name: "Agency",
+				monthlyPrice: 119,
+				yearlyPrice: 99, // 20% savings
+				description: "For creative teams and design studios that need shared workspaces, reusable components, and collaborative tools to keep output high and reviews smooth.",
 				features: [
-					"Everything in Pro",
-					"Dedicated account manager",
-					"1-hour support response time",
-					"Unlimited storage",
-					"Advanced security features",
-					"Custom integrations",
-					"99.9% uptime SLA"
+					"Up to 10 seats",
+					"2,500 AI credits per month",
+					"Unlimited projects across team workspaces",
+					"Shared assets and libraries",
+					"Feedback and review tools built into each canvas",
+					"Multiple custom styles per workspace",
+					"Frictionless team billing and unified dashboard",
+					"White-glove onboarding and support",
+					"Canvas export history and scheduled exports (by interval)"
 				],
 				cta: {
 					label: "Contact sales",
-					href: "/contact"
+					href: "/contact?plan=agency"
+				}
+			},
+			{
+				name: "Enterprise",
+				monthlyPrice: null,
+				yearlyPrice: null,
+				description: "For large creative orgs that need enterprise-grade support, advanced customization, and automation at scale. Everything in Agency—plus engineering, security, and collaboration tools at the highest level.",
+				features: [
+					"Flexible seats and usage caps",
+					"Custom AI credit tiers",
+					"Advanced workspace management and security",
+					"SSO/SAML & access controls",
+					"SLA-backed premium support",
+					"Direct API access and custom integrations",
+					"Private Slack channel with FLORA team",
+					"Custom onboarding, training, and playbook walkthroughs",
+					"2+ custom style libraries across workspaces",
+					"Bespoke workflows engineered for your org",
+					"Digital procurement and SOC-ready documentation"
+				],
+				cta: {
+					label: "Contact sales",
+					href: "/contact?plan=enterprise"
 				}
 			}
 		]
