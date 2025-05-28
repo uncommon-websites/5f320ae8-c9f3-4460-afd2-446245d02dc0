@@ -7,16 +7,45 @@
 	import CallToAction from "$lib/components/layout/CallToAction.svelte";
 	import AboutTeaser from "$lib/components/layout/AboutTeaser.svelte";
 	import LogoScroller from "$lib/components/layout/LogoScroller.svelte";
-	import Hero from "$lib/components/layout/hero-sections/Hero.svelte";
+	import CustomerCardHero from "$lib/components/layout/hero-sections/CustomerCardHero.svelte";
 </script>
 
-<Hero
-	title="Elevate your business with thoughtful design"
-	subtitle="Solutions that enhance user experience, and improve visual communication."
-	imageSrc="/sample.png"
-	generating
+<CustomerCardHero
+  centered={true}
+  title="Bring creative flow to your canvas"
+  subtitle="FLORA combines leading AI models in a single infinite canvas so creative teams can concept faster, moodboard better, and automate repetitive work—all without leaving their workspace."
+  customers={[  
+    {
+      name: "Catherine Chung",
+      position: "creative director at Pentagram",
+      imageSrc: "/generated/image-a-female-creative-director-in-a-bustling.webp"
+    },
+    {
+      name: "Samay Devraj",
+      position: "product designer at a health tech startup",
+      imageSrc: "/generated/image-a-female-product-designer-in-a-contempor.webp"
+    },
+    {
+      name: "Michelle Ma",
+      position: "artist and art educator",
+      imageSrc: "/generated/image-a-female-product-designer-in-a-contempor.webp"
+    },
+    {
+      name: "Cory",
+      position: "motion designer and 3D artist",
+      imageSrc: "/generated/image-a-male-engineer-in-a-collaborative-and-c.webp"
+    } 
+  ]}
 />
-<LogoScroller label="" generating />
+<LogoScroller
+	label="Trusted by industry leaders"
+	logoUrls={[
+		'https://logo.clearbit.com/pentagram.com',
+		'https://logo.clearbit.com/levistrauss.com',
+		'https://logo.clearbit.com/alibaba.com',
+		'https://logo.clearbit.com/nbc.com'
+	]}
+/>
 
 <Summary
 	generating
